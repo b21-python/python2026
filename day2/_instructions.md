@@ -46,7 +46,9 @@ If you haven't already create a free account at [GitHub](https://github.com)
 
 ## Setting Up Git
 
-You must configure git to have your username and email
+### Configure user name and email
+
+Enter the following commands in the terminal using your name and email.
 
 ```bash
 git config --global user.name "My Name"
@@ -61,3 +63,32 @@ Once you have set your username and email check that they are set correctly usin
 ```bash
 git config --list
 ```
+
+### Login to github from terminal
+
+Install github command line by entering the following in the terminal
+
+```bash
+sudo apt install gh
+```
+
+Entery `y` when asked
+
+Use the `gh` command to login enter the following in the terminal
+
+```bash
+gh auth login
+```
+
+Choose these answers when asked
+
+- ? What account do you want to log into? 
+  - Answer: GitHub.com
+- ? What is your preferred protocol for Git operations on this host?
+  - Answer: HTTPS
+- ? Authenticate Git with your GitHub credentials?
+  - Answer: Yes
+- ? How would you like to authenticate GitHub CLI?
+  - Answer: Login with a web browser
+
+Follow the instructions in the terminal and login via the web page opened.
