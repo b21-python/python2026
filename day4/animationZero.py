@@ -22,8 +22,6 @@ while row_height < sheet_height:
     row_width = 0
 
 
-print(row)
-
 #game window size
 width = 640
 height = 480
@@ -36,7 +34,6 @@ screen.fill("blue")
 y = 0
 for catRow in cat1:
     x = 0
-    print("Row:", y)
     for cat in catRow:
         screen.blit(cat, [x, y])
         x += 55
