@@ -67,7 +67,7 @@ class Arrows:
     def __init__ (self, imageLocation):
         self.Image = pygame.image.load(imageLocation)
         self.Active = []
-        self.Speed = 10;
+        self.Speed = 10
 
     ##Update each arrows position and place a rotated arrow image on the screen
     def MoveAndBlit(self, arena):

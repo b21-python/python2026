@@ -9,6 +9,7 @@ This read me includes useful information and links that will be useful throughou
 - [Pygame docs](https://www.pygame.org/docs/)
   - [Newbie Guide](https://www.pygame.org/docs/tut/newbieguide.html)
 - [Python course at Khan Academy](https://www.khanacademy.org/computing/intro-to-python-fundamentals)
+- [Open Game Art](https://opengameart.org/)
 
 ## Terminal cheat sheet
 

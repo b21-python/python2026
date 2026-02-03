@@ -10,6 +10,7 @@ class Stats:
         self.Font = pygame.font.Font(None, 24)
         self.StartTime = pygame.time.get_ticks()
         self.LastUpdate = pygame.time.get_ticks()
+        self.GameClock = pygame.time.Clock()
         self.MaxFPS = 60
         self.FontColor = fontColor
         self.BgColor = backgroundColor
@@ -39,11 +40,6 @@ class Stats:
 
 
     def FrameLimiter(self):
-        msMinPerFrame = 1000 / self.MaxFPS
-        msDelay = self.LastUpdate - pygame.time.get_ticks()
-        if msDelay < msMinPerFrame:
-            pygame.time.wait(math.floor(msMinPerFrame - msDelay))
-
-        self.LastUpdate = pygame.time.get_ticks()
+        self.GameClock.tick(self.MaxFPS)
 
         

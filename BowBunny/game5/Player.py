@@ -39,7 +39,6 @@ class Player:
     def Attack(self, victim):
         victim.Health -= self.Damage
         self.Health -= victim.Damage
-        #return self.Damage
 
     def Alive(self):
         return self.Health > 0

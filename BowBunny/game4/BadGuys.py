@@ -54,7 +54,7 @@ class BadGuys:
             if not arena.InBounds(b.Position, 0, self.Padding):
                 b.Health = 0
 
-        self.Active = [bg for bg in self.Active if bg.Alive()]#filter(lambda bg: bg.Alive(), self.Active)
+        self.Active = [bg for bg in self.Active if bg.Alive()]
 
         self.TimeToSpawn -= 1 
 
