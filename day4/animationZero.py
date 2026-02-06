@@ -28,15 +28,23 @@ height = 480
 
 #game window
 screen = pygame.display.set_mode([width, height])
+clock = pygame.time.Clock()
 
-screen.fill("blue")
+frame = 0
+while True:
+    screen.fill("blue")
 
-y = 0
-for catRow in cat1:
-    x = 0
-    for cat in catRow:
-        screen.blit(cat, [x, y])
-        x += 55
-    y += 55
+    y = 0
+    frameRendered = False
+    for catRow in cat1:
+        if frame < len(catRow):
+            screen.blit(catRow[frame], [0,y])
+            frameRendered = True
+        y += 55
 
-pygame.display.update()
+    frame += 1
+    if frameRendered == False:
+        frame = 0
+
+    pygame.display.update()
+    clock.tick(15)

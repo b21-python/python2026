@@ -19,6 +19,10 @@ Connection checklist
 - Connect USB power via port next to HDMI
 - Pi should turn on automatically, if it does not after a few seconds press the power button
 
+## Write some python
+
+We will review [python101](../day1/python101.md) from last week and then go over [python102](./python102.md)
+
 ## Create `code` folder
 
 - Open the terminal
@@ -38,7 +42,8 @@ Connection checklist
 ## Open and run cubeZero.py
 
 - Open the Thonny app by clicking Berry->Programming->Thonny
-- Run by clicking the 'Run' menu then 'Run Module'
+- Open the cubeZero.py file in Thonny
+- Run by clicking the green Run button
 
 ## Create a GitHub account
 
