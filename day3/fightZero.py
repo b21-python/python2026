@@ -12,16 +12,15 @@ ORANGE = (255, 102, 0)
 #Accessors
 X = 0
 Y = 1
+#game window size
+width = 640
+height = 480
 
 ####game variables####
 playerSprite = pygame.image.load("dude.png")
 
 #Player state           X   Y
 player = { "Position":[10, 10], "Sprite":playerSprite, "Speed":10 }
-
-#game window size
-width = 640
-height = 480
 
 groundLevel = 400
 

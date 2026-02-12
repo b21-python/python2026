@@ -22,6 +22,8 @@ playerSprite = pygame.image.load("dude.png")
 #Player state           X   Y
 player = { "Position":[10, 10], "Sprite":playerSprite, "Speed":10 }
 
+obstacles = [Rect(100, 0, 10, 200), Rect(250, 180, 100, 100), Rect(400, 380, 200, 10)]
+
 #game window
 screen = pygame.display.set_mode([width, height])
 
@@ -36,7 +38,6 @@ gameActive = True
 
 #Main Game loop.  The game runs until the user quits
 while gameActive:
-
     #Limit to 60 FPS
     gameClock.tick(60)
 
@@ -45,6 +46,8 @@ while gameActive:
 
     # Draw the player image on the screen
     screen.blit(player["Sprite"], player["Position"])
+    for ob in obstacles:
+        pygame.draw.rect(screen, ORANGE, ob)
     
     #Draw arena (surface)
     pygame.display.update()
@@ -64,10 +67,14 @@ while gameActive:
     updatedX = player["Position"][X] + xMovement
     updatedY = player["Position"][Y] + yMovement
 
+    # Detect if the updated position intersects with any obstacles
+    updatedPlayerRect = Rect(updatedX, updatedY, player["Sprite"].get_width(), player["Sprite"].get_height())
+    intersectsObstacles = updatedPlayerRect.collidelist(obstacles) != -1
+
     #Update player position if new position is in bounds
-    if updatedX >= 0 and updatedX + player["Sprite"].get_width() <= width:
+    if not intersectsObstacles and updatedX >= 0 and updatedX + player["Sprite"].get_width() <= width:
         player["Position"][X] = updatedX
-    if updatedY >= 0 and updatedY + player["Sprite"].get_height() <= height:
+    if not intersectsObstacles and updatedY >= 0 and updatedY + player["Sprite"].get_height() <= height:
         player["Position"][Y] = updatedY
     
 
