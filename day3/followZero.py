@@ -23,7 +23,7 @@ playerSprite = pygame.image.load("dude.png")
 path = [[320, 480], [320, 400], [200, 400], [200, 300], [400, 200], [400, 0]]
 
 #Player state
-player = { "Position":path[0].copy(), "Target": 1, "Sprite":playerSprite, "Speed":10 }
+player = { "Position":path[0].copy(), "Target": 1, "Sprite":playerSprite, "Speed":5 }
 
 #game window
 screen = pygame.display.set_mode([width, height])
@@ -57,14 +57,14 @@ while gameActive:
     targetPoint = path[player["Target"]]
     # Move X
     if targetPoint[X] < player["Position"][X]:
-        player["Position"][X] -= 1
+        player["Position"][X] -= player["Speed"]
     elif targetPoint[X] > player["Position"][X]:
-        player["Position"][X] += 1
+        player["Position"][X] += player["Speed"]
     # Move Y
     if targetPoint[Y] < player["Position"][Y]:
-        player["Position"][Y] -= 1
+        player["Position"][Y] -= player["Speed"]
     elif targetPoint[Y] > player["Position"][Y]:
-        player["Position"][Y] += 1
+        player["Position"][Y] += player["Speed"]
     
     # if player reaches current target update the target or reset if reached final target
     if targetPoint == player["Position"]:
@@ -74,7 +74,7 @@ while gameActive:
             print("Target incremented", player["Target"])
         else:
             player["Target"] = 1
-            player["Position"] = path[0]
+            player["Position"] = path[0].copy()
             print("Target Reset", player["Position"])
     
     
