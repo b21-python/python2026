@@ -82,3 +82,31 @@ pygame.exit()
 ```
 
 > Note 1: This example focuses on code used to create and move obstacles and is designed to be added to existing examples.
+
+#### Creating rectangles
+
+Each rectangle is created using the [contructor for the Rect class
+](https://www.pygame.org/docs/ref/rect.html)
+
+```python
+Rect(left, top, width, height)
+```
+
+> Question: In the example code why is the top position set to `groundLevel - height`?
+
+#### Drawning the rectangles
+
+A for loop is used to loop over each rectangle in the `obtacles` list and the [`pygame.draw.rect`](https://www.pygame.org/docs/ref/draw.html#pygame.draw.rect) command is used to draw them.
+
+```python
+pygame.draw.rect(surface, color, rect)
+```
+
+#### Moing the rectangles
+
+A for loop is used to loop over each rectangle in the `obstacles` list and the  [Rect.move_ip](https://www.pygame.org/docs/ref/rect.html#pygame.Rect.move_ip) function is used to them
+
+```python
+move_ip(x, y)
+```
+
