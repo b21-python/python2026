@@ -12,4 +12,3 @@ We will review [python101](../day1/python101.md) from previous weeks and then go
 
 ## Learn some new python
 
-Line Of sight calculations are reviewed here: [Line Of Sight](./lineOfSight.md)
